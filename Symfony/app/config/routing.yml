@@ -1,0 +1,7 @@
+garderie:
+    resource: "@GarderieBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
