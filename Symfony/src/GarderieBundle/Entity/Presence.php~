@@ -1,0 +1,141 @@
+<?php
+
+namespace GarderieBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Presence
+ *
+ * @ORM\Table(name="presence")
+ * @ORM\Entity(repositoryClass="GarderieBundle\Repository\PresenceRepository")
+ */
+class Presence
+{
+
+    /**
+    * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\enfant")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $enfant;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\jour")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $jour;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="heureArriveeMatin", type="string", length=255)
+     */
+    private $heureArriveeMatin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="heureDepartSoir", type="string", length=255)
+     */
+    private $heureDepartSoir;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set heureArriveeMatin
+     *
+     * @param string $heureArriveeMatin
+     *
+     * @return Presence
+     */
+    public function setHeureArriveeMatin($heureArriveeMatin)
+    {
+        $this->heureArriveeMatin = $heureArriveeMatin;
+
+        return $this;
+    }
+
+    /**
+     * Get heureArriveeMatin
+     *
+     * @return string
+     */
+    public function getHeureArriveeMatin()
+    {
+        return $this->heureArriveeMatin;
+    }
+
+    /**
+     * Set heureDepartSoir
+     *
+     * @param string $heureDepartSoir
+     *
+     * @return Presence
+     */
+    public function setHeureDepartSoir($heureDepartSoir)
+    {
+        $this->heureDepartSoir = $heureDepartSoir;
+
+        return $this;
+    }
+
+    /**
+     * Get heureDepartSoir
+     *
+     * @return string
+     */
+    public function getHeureDepartSoir()
+    {
+        return $this->heureDepartSoir;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Presence
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+}
+
