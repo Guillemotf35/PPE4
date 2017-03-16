@@ -5,18 +5,18 @@ namespace GarderieBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * enfant
+ * responsableLegal
  *
- * @ORM\Table(name="enfant")
- * @ORM\Entity(repositoryClass="GarderieBundle\Repository\enfantRepository")
+ * @ORM\Table(name="responsable_legal")
+ * @ORM\Entity(repositoryClass="GarderieBundle\Repository\responsableLegalRepository")
  */
-class enfant
+class responsableLegal
 {
     /**
-    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\responsableLegal",cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\tarif")
     * @ORM\JoinColumn(nullable=false)
     */
-    private $responsableLegal;
+    private $tarif;
 
     /**
      * @var int
@@ -44,9 +44,16 @@ class enfant
     /**
      * @var string
      *
-     * @ORM\Column(name="dateNaissance", type="string", length=255)
+     * @ORM\Column(name="telephone", type="string", length=255)
      */
-    private $dateNaissance;
+    private $telephone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="QF", type="string", length=255)
+     */
+    private $qF;
 
 
     /**
@@ -64,7 +71,7 @@ class enfant
      *
      * @param string $nom
      *
-     * @return enfant
+     * @return responsableLegal
      */
     public function setNom($nom)
     {
@@ -88,7 +95,7 @@ class enfant
      *
      * @param string $prenom
      *
-     * @return enfant
+     * @return responsableLegal
      */
     public function setPrenom($prenom)
     {
@@ -108,50 +115,74 @@ class enfant
     }
 
     /**
-     * Set dateNaissance
+     * Set telephone
      *
-     * @param string $dateNaissance
+     * @param string $telephone
      *
-     * @return enfant
+     * @return responsableLegal
      */
-    public function setDateNaissance($dateNaissance)
+    public function setTelephone($telephone)
     {
-        $this->dateNaissance = $dateNaissance;
+        $this->telephone = $telephone;
 
         return $this;
     }
 
     /**
-     * Get dateNaissance
+     * Get telephone
      *
      * @return string
      */
-    public function getDateNaissance()
+    public function getTelephone()
     {
-        return $this->dateNaissance;
+        return $this->telephone;
     }
 
     /**
-     * Set responsableLegal
+     * Set qF
      *
-     * @param \OC\GarderieBundle\Entity\responsableLegal $responsableLegal
+     * @param string $qF
      *
-     * @return enfant
+     * @return responsableLegal
      */
-    public function setResponsableLegal(\OC\GarderieBundle\Entity\responsableLegal $responsableLegal)
+    public function setQF($qF)
     {
-        $this->responsableLegal = $responsableLegal;
+        $this->qF = $qF;
 
         return $this;
     }
 
     /**
-     * Get responsableLegal
+     * Get qF
      *
-     * @return \OC\GarderieBundle\Entity\responsableLegal
+     * @return string
      */
-    public function getResponsableLegal()
+    public function getQF()
     {
-        return $this->responsableLegal;
+        return $this->qF;
+    }
+
+    /**
+     * Set tarif
+     *
+     * @param \OC\GarderieBundle\Entity\tarif $tarif
+     *
+     * @return responsableLegal
+     */
+    public function setTarif(\OC\GarderieBundle\Entity\tarif $tarif)
+    {
+        $this->tarif = $tarif;
+
+        return $this;
+    }
+
+    /**
+     * Get tarif
+     *
+     * @return \OC\GarderieBundle\Entity\tarif
+     */
+    public function getTarif()
+    {
+        return $this->tarif;
     }
 }

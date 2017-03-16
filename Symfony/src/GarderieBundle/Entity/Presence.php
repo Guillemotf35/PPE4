@@ -14,13 +14,13 @@ class Presence
 {
 
     /**
-    * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\enfant")
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\enfant")
     * @ORM\JoinColumn(nullable=false)
     */
     private $enfant;
 
     /**
-    * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\jour")
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\jour")
     * @ORM\JoinColumn(nullable=false)
     */
     private $jour;

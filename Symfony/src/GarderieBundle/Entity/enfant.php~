@@ -5,19 +5,18 @@ namespace GarderieBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * parent
+ * enfant
  *
- * @ORM\Table(name="parent")
- * @ORM\Entity(repositoryClass="GarderieBundle\Repository\parentRepository")
+ * @ORM\Table(name="enfant")
+ * @ORM\Entity(repositoryClass="GarderieBundle\Repository\enfantRepository")
  */
-class parent
+class enfant
 {
-
-    /**
-    * @ORM\ManyToOne(targetEntity="OC\GarderieBundle\Entity\tarif")
+        /**
+    * @ORM\ManyToOne(targetEntity="OC\GarderieBundle\Entity\responsableLegal")
     * @ORM\JoinColumn(nullable=false)
     */
-    private $tarif;
+    private $responsableLegal;
 
     /**
      * @var int
@@ -45,16 +44,9 @@ class parent
     /**
      * @var string
      *
-     * @ORM\Column(name="telephone", type="string", length=255)
+     * @ORM\Column(name="dateNaissance", type="string", length=255)
      */
-    private $telephone;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="QF", type="string", length=255)
-     */
-    private $qF;
+    private $dateNaissance;
 
 
     /**
@@ -72,7 +64,7 @@ class parent
      *
      * @param string $nom
      *
-     * @return parent
+     * @return enfant
      */
     public function setNom($nom)
     {
@@ -96,7 +88,7 @@ class parent
      *
      * @param string $prenom
      *
-     * @return parent
+     * @return enfant
      */
     public function setPrenom($prenom)
     {
@@ -116,51 +108,27 @@ class parent
     }
 
     /**
-     * Set telephone
+     * Set dateNaissance
      *
-     * @param string $telephone
+     * @param string $dateNaissance
      *
-     * @return parent
+     * @return enfant
      */
-    public function setTelephone($telephone)
+    public function setDateNaissance($dateNaissance)
     {
-        $this->telephone = $telephone;
+        $this->dateNaissance = $dateNaissance;
 
         return $this;
     }
 
     /**
-     * Get telephone
+     * Get dateNaissance
      *
      * @return string
      */
-    public function getTelephone()
+    public function getDateNaissance()
     {
-        return $this->telephone;
-    }
-
-    /**
-     * Set qF
-     *
-     * @param string $qF
-     *
-     * @return parent
-     */
-    public function setQF($qF)
-    {
-        $this->qF = $qF;
-
-        return $this;
-    }
-
-    /**
-     * Get qF
-     *
-     * @return string
-     */
-    public function getQF()
-    {
-        return $this->qF;
+        return $this->dateNaissance;
     }
 }
 

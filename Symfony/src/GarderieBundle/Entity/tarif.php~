@@ -63,3 +63,4 @@ class tarif
         return $this->prixQuartHeure;
     }
 }
+

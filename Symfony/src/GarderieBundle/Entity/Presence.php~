@@ -137,5 +137,52 @@ class Presence
     {
         return $this->date;
     }
-}
 
+    /**
+     * Set enfant
+     *
+     * @param \OC\PlatformBundle\Entity\enfant $enfant
+     *
+     * @return Presence
+     */
+    public function setEnfant(\OC\PlatformBundle\Entity\enfant $enfant)
+    {
+        $this->enfant = $enfant;
+
+        return $this;
+    }
+
+    /**
+     * Get enfant
+     *
+     * @return \OC\PlatformBundle\Entity\enfant
+     */
+    public function getEnfant()
+    {
+        return $this->enfant;
+    }
+
+    /**
+     * Set jour
+     *
+     * @param \OC\PlatformBundle\Entity\jour $jour
+     *
+     * @return Presence
+     */
+    public function setJour(\OC\PlatformBundle\Entity\jour $jour)
+    {
+        $this->jour = $jour;
+
+        return $this;
+    }
+
+    /**
+     * Get jour
+     *
+     * @return \OC\PlatformBundle\Entity\jour
+     */
+    public function getJour()
+    {
+        return $this->jour;
+    }
+}

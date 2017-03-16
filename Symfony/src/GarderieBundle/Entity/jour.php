@@ -63,4 +63,3 @@ class jour
         return $this->libelleJour;
     }
 }
-

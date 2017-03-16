@@ -5,12 +5,12 @@ namespace GarderieBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * tarif
+ * jour
  *
- * @ORM\Table(name="tarif")
- * @ORM\Entity(repositoryClass="GarderieBundle\Repository\tarifRepository")
+ * @ORM\Table(name="jour")
+ * @ORM\Entity(repositoryClass="GarderieBundle\Repository\jourRepository")
  */
-class tarif
+class jour
 {
     /**
      * @var int
@@ -24,9 +24,9 @@ class tarif
     /**
      * @var string
      *
-     * @ORM\Column(name="prixQuartHeure", type="string", length=255)
+     * @ORM\Column(name="libelleJour", type="string", length=255)
      */
-    private $prixQuartHeure;
+    private $libelleJour;
 
 
     /**
@@ -40,26 +40,27 @@ class tarif
     }
 
     /**
-     * Set prixQuartHeure
+     * Set libelleJour
      *
-     * @param string $prixQuartHeure
+     * @param string $libelleJour
      *
-     * @return tarif
+     * @return jour
      */
-    public function setPrixQuartHeure($prixQuartHeure)
+    public function setLibelleJour($libelleJour)
     {
-        $this->prixQuartHeure = $prixQuartHeure;
+        $this->libelleJour = $libelleJour;
 
         return $this;
     }
 
     /**
-     * Get prixQuartHeure
+     * Get libelleJour
      *
      * @return string
      */
-    public function getPrixQuartHeure()
+    public function getLibelleJour()
     {
-        return $this->prixQuartHeure;
+        return $this->libelleJour;
     }
 }
+
