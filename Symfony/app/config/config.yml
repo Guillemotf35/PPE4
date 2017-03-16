@@ -69,3 +69,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# app/config/config.yml
+easy_admin:
+    entities:
+        - GarderieBundle\Entity\Customer
+        - GarderieBundle\Entity\Order
+        - GarderieBundle\Entity\Product
