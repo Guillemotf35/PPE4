@@ -72,7 +72,15 @@ swiftmailer:
 
 # app/config/config.yml
 easy_admin:
+    site_name: 'ADMIN'
+
+    design:
+        brand_color: '#455a64'
+        menu:
+            - { entity : 'jour', label: 'jour'}
+
     entities:
-        - GarderieBundle\Entity\Customer
-        - GarderieBundle\Entity\Order
-        - GarderieBundle\Entity\Product
+            
+            jour:
+                label: jour
+                class: GarderieBundle\Entity\jour
