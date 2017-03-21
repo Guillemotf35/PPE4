@@ -37,12 +37,31 @@ public class Garderie {
 			}			
 			
 			
-			String queryResponsableLegal = "SELECT nom, prenom FROM responsable_legal";
+			String queryResponsableLegal = "SELECT nom, prenom, QF FROM responsable_legal";
 			ResultSet rsRL = st.executeQuery(queryResponsableLegal);
 			
 			while (rsRL.next()){
-				System.out.printf("%-20s %-20s \n", rsRL.getString("nom") ,rsRL.getString("prenom"));
+				System.out.printf("%-20s %-20s %-20s \n", rsRL.getString("nom") ,rsRL.getString("prenom") ,rsRL.getString("QF"));
+			}	
+			//String nomP = rsRL.getString("nom");
+			//String prenomP = rsRL.getString("prenom");
+			
+			
+			String queryNbEnfant = "SELECT count(*) as 'nb' FROM enfant, responsable_legal WHERE enfant.responsable_legal_id=responsable_legal.id and responsable_legal.nom = 'DUPONT' and responsable_legal.prenom = 'Maxime' ";
+			ResultSet rsNbE = st.executeQuery(queryNbEnfant);
+			
+			while (rsNbE.next()){
+				System.out.printf("%-20s \n", rsNbE.getString("nb"));
 			}
+			
+			
+			
+			//prixQuartHeure*nbQuartHeure*nbEnfants
+			//SELECT count(*)
+			//FROM enfant, responsable_legal
+			//WHERE enfant.responsable_legal_id=responsable_legal.id
+			//and responsable_legal.nom = "DUPONT"
+			//and responsable_legal.prenom = "Maxime"
 		}
 		finally
 		{
