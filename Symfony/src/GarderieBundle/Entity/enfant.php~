@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class enfant
 {
-        /**
-    * @ORM\ManyToOne(targetEntity="OC\GarderieBundle\Entity\responsableLegal")
+    /**
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\responsableLegal",cascade={"persist"})
     * @ORM\JoinColumn(nullable=false)
     */
     private $responsableLegal;
@@ -130,5 +130,38 @@ class enfant
     {
         return $this->dateNaissance;
     }
-}
 
+
+
+
+      public function __toString()
+    {
+        return $this->nom.' '.$this->prenom;
+
+       
+    }
+
+    /**
+     * Set responsableLegal
+     *
+     * @param \GarderieBundle\Entity\responsableLegal $responsableLegal
+     *
+     * @return enfant
+     */
+    public function setResponsableLegal(\GarderieBundle\Entity\responsableLegal $responsableLegal)
+    {
+        $this->responsableLegal = $responsableLegal;
+
+        return $this;
+    }
+
+    /**
+     * Get responsableLegal
+     *
+     * @return \GarderieBundle\Entity\responsableLegal
+     */
+    public function getResponsableLegal()
+    {
+        return $this->responsableLegal;
+    }
+}

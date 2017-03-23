@@ -62,4 +62,11 @@ class jour
     {
         return $this->libelleJour;
     }
+
+
+    public function __toString()
+    {
+        return $this->libelleJour;
+
+    }
 }

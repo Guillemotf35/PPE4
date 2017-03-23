@@ -131,14 +131,24 @@ class enfant
         return $this->dateNaissance;
     }
 
+
+
+
+      public function __toString()
+    {
+        return $this->nom.' '.$this->prenom;
+
+       
+    }
+
     /**
      * Set responsableLegal
      *
-     * @param \OC\GarderieBundle\Entity\responsableLegal $responsableLegal
+     * @param \GarderieBundle\Entity\responsableLegal $responsableLegal
      *
      * @return enfant
      */
-    public function setResponsableLegal(\OC\GarderieBundle\Entity\responsableLegal $responsableLegal)
+    public function setResponsableLegal(\GarderieBundle\Entity\responsableLegal $responsableLegal)
     {
         $this->responsableLegal = $responsableLegal;
 
@@ -148,7 +158,7 @@ class enfant
     /**
      * Get responsableLegal
      *
-     * @return \OC\GarderieBundle\Entity\responsableLegal
+     * @return \GarderieBundle\Entity\responsableLegal
      */
     public function getResponsableLegal()
     {

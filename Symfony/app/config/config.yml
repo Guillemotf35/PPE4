@@ -77,10 +77,44 @@ easy_admin:
     design:
         brand_color: '#455a64'
         menu:
-            - { entity : 'jour', label: 'jour'}
+            - { entity : 'Presence', label: 'Présence'}
+            - { entity : 'enfant', label: 'Enfant'}
+            - { entity : 'responsableLegal', label: 'Responsable Légal'}
+            - { entity : 'jour', label: 'Jour'}
+            - { entity : 'tarif', label: 'Tarifs'}
+           
+            
 
     entities:
+
+            Presence:
+                label: Présence
+                class: GarderieBundle\Entity\Presence
             
+            enfant:
+                label: Enfant
+                class: GarderieBundle\Entity\enfant
+
+            responsableLegal:
+                label: Responsable Légal
+                class: GarderieBundle\Entity\responsableLegal
+                   
             jour:
-                label: jour
+                label: Jour
                 class: GarderieBundle\Entity\jour
+    
+
+            tarif:
+                label: Tarifs
+                class: GarderieBundle\Entity\tarif
+
+
+         
+
+           
+                
+          
+
+
+
+        

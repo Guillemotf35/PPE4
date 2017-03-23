@@ -145,7 +145,24 @@ class Presence
      *
      * @return Presence
      */
-    public function setEnfant(\OC\PlatformBundle\Entity\enfant $enfant)
+
+    /**
+     * Set jour
+     *
+     * @param \OC\PlatformBundle\Entity\jour $jour
+     *
+     * @return Presence
+     */
+  
+
+    /**
+     * Set enfant
+     *
+     * @param \GarderieBundle\Entity\enfant $enfant
+     *
+     * @return Presence
+     */
+    public function setEnfant(\GarderieBundle\Entity\enfant $enfant)
     {
         $this->enfant = $enfant;
 
@@ -155,7 +172,7 @@ class Presence
     /**
      * Get enfant
      *
-     * @return \OC\PlatformBundle\Entity\enfant
+     * @return \GarderieBundle\Entity\enfant
      */
     public function getEnfant()
     {
@@ -165,11 +182,11 @@ class Presence
     /**
      * Set jour
      *
-     * @param \OC\PlatformBundle\Entity\jour $jour
+     * @param \GarderieBundle\Entity\jour $jour
      *
      * @return Presence
      */
-    public function setJour(\OC\PlatformBundle\Entity\jour $jour)
+    public function setJour(\GarderieBundle\Entity\jour $jour)
     {
         $this->jour = $jour;
 
@@ -179,7 +196,7 @@ class Presence
     /**
      * Get jour
      *
-     * @return \OC\PlatformBundle\Entity\jour
+     * @return \GarderieBundle\Entity\jour
      */
     public function getJour()
     {

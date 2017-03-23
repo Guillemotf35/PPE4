@@ -14,13 +14,13 @@ class Presence
 {
 
     /**
-    * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\enfant")
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\enfant")
     * @ORM\JoinColumn(nullable=false)
     */
     private $enfant;
 
     /**
-    * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\jour")
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\jour")
     * @ORM\JoinColumn(nullable=false)
     */
     private $jour;
@@ -145,7 +145,24 @@ class Presence
      *
      * @return Presence
      */
-    public function setEnfant(\OC\PlatformBundle\Entity\enfant $enfant)
+
+    /**
+     * Set jour
+     *
+     * @param \OC\PlatformBundle\Entity\jour $jour
+     *
+     * @return Presence
+     */
+  
+
+    /**
+     * Set enfant
+     *
+     * @param \GarderieBundle\Entity\enfant $enfant
+     *
+     * @return Presence
+     */
+    public function setEnfant(\GarderieBundle\Entity\enfant $enfant)
     {
         $this->enfant = $enfant;
 
@@ -155,34 +172,10 @@ class Presence
     /**
      * Get enfant
      *
-     * @return \OC\PlatformBundle\Entity\enfant
+     * @return \GarderieBundle\Entity\enfant
      */
     public function getEnfant()
     {
         return $this->enfant;
-    }
-
-    /**
-     * Set jour
-     *
-     * @param \OC\PlatformBundle\Entity\jour $jour
-     *
-     * @return Presence
-     */
-    public function setJour(\OC\PlatformBundle\Entity\jour $jour)
-    {
-        $this->jour = $jour;
-
-        return $this;
-    }
-
-    /**
-     * Get jour
-     *
-     * @return \OC\PlatformBundle\Entity\jour
-     */
-    public function getJour()
-    {
-        return $this->jour;
     }
 }
