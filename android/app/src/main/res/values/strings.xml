@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Garderie</string>
+    <string name="libelleTitle">Communauté d\'agglomération de la Plaine</string>
+    <string name="btnArrive">Arrive</string>
+    <string name="btnRecap">Recap</string>
+    <string name="btndepart">Depart</string>
+    <string name="txtNomEleve">Nom élève</string>
+    <string name="btnValide">Valide</string>
+    <string name="btnDepart" />
+</resources>
