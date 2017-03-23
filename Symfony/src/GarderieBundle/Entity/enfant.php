@@ -42,9 +42,9 @@ class enfant
     private $prenom;
 
     /**
-     * @var string
+     * @var date
      *
-     * @ORM\Column(name="dateNaissance", type="string", length=255)
+     * @ORM\Column(name="dateNaissance", type="date")
      */
     private $dateNaissance;
 
@@ -107,30 +107,6 @@ class enfant
         return $this->prenom;
     }
 
-    /**
-     * Set dateNaissance
-     *
-     * @param string $dateNaissance
-     *
-     * @return enfant
-     */
-    public function setDateNaissance($dateNaissance)
-    {
-        $this->dateNaissance = $dateNaissance;
-
-        return $this;
-    }
-
-    /**
-     * Get dateNaissance
-     *
-     * @return string
-     */
-    public function getDateNaissance()
-    {
-        return $this->dateNaissance;
-    }
-
 
 
 
@@ -163,5 +139,31 @@ class enfant
     public function getResponsableLegal()
     {
         return $this->responsableLegal;
+    }
+
+  
+
+    /**
+     * Set dateNaissance
+     *
+     * @param \date $dateNaissance
+     *
+     * @return enfant
+     */
+    public function setDateNaissance($dateNaissance)
+    {
+        $this->dateNaissance = $dateNaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get dateNaissance
+     *
+     * @return \date
+     */
+    public function getDateNaissance()
+    {
+        return $this->dateNaissance;
     }
 }

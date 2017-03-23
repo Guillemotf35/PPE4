@@ -35,21 +35,21 @@ class Presence
     private $id;
 
     /**
-     * @var string
+     * @var Time
      *
-     * @ORM\Column(name="heureArriveeMatin", type="string", length=255)
+     * @ORM\Column(name="heureArriveeMatin", type="time")
      */
     private $heureArriveeMatin;
 
     /**
-     * @var string
+     * @var Time
      *
-     * @ORM\Column(name="heureDepartSoir", type="string", length=255)
+     * @ORM\Column(name="heureDepartSoir", type="time")
      */
     private $heureDepartSoir;
 
     /**
-     * @var \DateTime
+     * @var date
      *
      * @ORM\Column(name="date", type="date")
      */
@@ -66,58 +66,12 @@ class Presence
         return $this->id;
     }
 
-    /**
-     * Set heureArriveeMatin
-     *
-     * @param string $heureArriveeMatin
-     *
-     * @return Presence
-     */
-    public function setHeureArriveeMatin($heureArriveeMatin)
-    {
-        $this->heureArriveeMatin = $heureArriveeMatin;
-
-        return $this;
-    }
-
-    /**
-     * Get heureArriveeMatin
-     *
-     * @return string
-     */
-    public function getHeureArriveeMatin()
-    {
-        return $this->heureArriveeMatin;
-    }
-
-    /**
-     * Set heureDepartSoir
-     *
-     * @param string $heureDepartSoir
-     *
-     * @return Presence
-     */
-    public function setHeureDepartSoir($heureDepartSoir)
-    {
-        $this->heureDepartSoir = $heureDepartSoir;
-
-        return $this;
-    }
-
-    /**
-     * Get heureDepartSoir
-     *
-     * @return string
-     */
-    public function getHeureDepartSoir()
-    {
-        return $this->heureDepartSoir;
-    }
-
+  
+  
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param date $date
      *
      * @return Presence
      */
@@ -131,28 +85,14 @@ class Presence
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return date
      */
     public function getDate()
     {
         return $this->date;
     }
 
-    /**
-     * Set enfant
-     *
-     * @param \OC\PlatformBundle\Entity\enfant $enfant
-     *
-     * @return Presence
-     */
 
-    /**
-     * Set jour
-     *
-     * @param \OC\PlatformBundle\Entity\jour $jour
-     *
-     * @return Presence
-     */
   
 
     /**
@@ -201,5 +141,62 @@ class Presence
     public function getJour()
     {
         return $this->jour;
+    }
+
+    /**
+     * Set heureArriveeMatin
+     *
+     * @param time $heureArriveeMatin
+     *
+     * @return Presence
+     */
+
+
+    /**
+     * Set heureArriveeMatin
+     *
+     * @param \DateTime $heureArriveeMatin
+     *
+     * @return Presence
+     */
+    public function setHeureArriveeMatin($heureArriveeMatin)
+    {
+        $this->heureArriveeMatin = $heureArriveeMatin;
+
+        return $this;
+    }
+
+    /**
+     * Get heureArriveeMatin
+     *
+     * @return \DateTime
+     */
+    public function getHeureArriveeMatin()
+    {
+        return $this->heureArriveeMatin;
+    }
+
+    /**
+     * Set heureDepartSoir
+     *
+     * @param \DateTime $heureDepartSoir
+     *
+     * @return Presence
+     */
+    public function setHeureDepartSoir($heureDepartSoir)
+    {
+        $this->heureDepartSoir = $heureDepartSoir;
+
+        return $this;
+    }
+
+    /**
+     * Get heureDepartSoir
+     *
+     * @return \DateTime
+     */
+    public function getHeureDepartSoir()
+    {
+        return $this->heureDepartSoir;
     }
 }
