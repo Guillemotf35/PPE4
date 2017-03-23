@@ -14,13 +14,13 @@ class Presence
 {
 
     /**
-    * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\enfant")
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\enfant")
     * @ORM\JoinColumn(nullable=false)
     */
     private $enfant;
 
     /**
-    * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\jour")
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\jour")
     * @ORM\JoinColumn(nullable=false)
     */
     private $jour;
@@ -35,21 +35,21 @@ class Presence
     private $id;
 
     /**
-     * @var string
+     * @var Time
      *
-     * @ORM\Column(name="heureArriveeMatin", type="string", length=255)
+     * @ORM\Column(name="heureArriveeMatin", type="time")
      */
     private $heureArriveeMatin;
 
     /**
-     * @var string
+     * @var Time
      *
-     * @ORM\Column(name="heureDepartSoir", type="string", length=255)
+     * @ORM\Column(name="heureDepartSoir", type="time")
      */
     private $heureDepartSoir;
 
     /**
-     * @var \DateTime
+     * @var date
      *
      * @ORM\Column(name="date", type="date")
      */
@@ -66,58 +66,12 @@ class Presence
         return $this->id;
     }
 
-    /**
-     * Set heureArriveeMatin
-     *
-     * @param string $heureArriveeMatin
-     *
-     * @return Presence
-     */
-    public function setHeureArriveeMatin($heureArriveeMatin)
-    {
-        $this->heureArriveeMatin = $heureArriveeMatin;
-
-        return $this;
-    }
-
-    /**
-     * Get heureArriveeMatin
-     *
-     * @return string
-     */
-    public function getHeureArriveeMatin()
-    {
-        return $this->heureArriveeMatin;
-    }
-
-    /**
-     * Set heureDepartSoir
-     *
-     * @param string $heureDepartSoir
-     *
-     * @return Presence
-     */
-    public function setHeureDepartSoir($heureDepartSoir)
-    {
-        $this->heureDepartSoir = $heureDepartSoir;
-
-        return $this;
-    }
-
-    /**
-     * Get heureDepartSoir
-     *
-     * @return string
-     */
-    public function getHeureDepartSoir()
-    {
-        return $this->heureDepartSoir;
-    }
-
+  
+  
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param date $date
      *
      * @return Presence
      */
@@ -131,21 +85,24 @@ class Presence
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return date
      */
     public function getDate()
     {
         return $this->date;
     }
 
+
+  
+
     /**
      * Set enfant
      *
-     * @param \OC\PlatformBundle\Entity\enfant $enfant
+     * @param \GarderieBundle\Entity\enfant $enfant
      *
      * @return Presence
      */
-    public function setEnfant(\OC\PlatformBundle\Entity\enfant $enfant)
+    public function setEnfant(\GarderieBundle\Entity\enfant $enfant)
     {
         $this->enfant = $enfant;
 
@@ -155,7 +112,7 @@ class Presence
     /**
      * Get enfant
      *
-     * @return \OC\PlatformBundle\Entity\enfant
+     * @return \GarderieBundle\Entity\enfant
      */
     public function getEnfant()
     {
@@ -165,11 +122,11 @@ class Presence
     /**
      * Set jour
      *
-     * @param \OC\PlatformBundle\Entity\jour $jour
+     * @param \GarderieBundle\Entity\jour $jour
      *
      * @return Presence
      */
-    public function setJour(\OC\PlatformBundle\Entity\jour $jour)
+    public function setJour(\GarderieBundle\Entity\jour $jour)
     {
         $this->jour = $jour;
 
@@ -179,10 +136,19 @@ class Presence
     /**
      * Get jour
      *
-     * @return \OC\PlatformBundle\Entity\jour
+     * @return \GarderieBundle\Entity\jour
      */
     public function getJour()
     {
         return $this->jour;
     }
+
+    /**
+     * Set heureArriveeMatin
+     *
+     * @param time $heureArriveeMatin
+     *
+     * @return Presence
+     */
+
 }

@@ -162,14 +162,15 @@ class responsableLegal
         return $this->qF;
     }
 
+
     /**
      * Set tarif
      *
-     * @param \OC\GarderieBundle\Entity\tarif $tarif
+     * @param \GarderieBundle\Entity\tarif $tarif
      *
      * @return responsableLegal
      */
-    public function setTarif(\OC\GarderieBundle\Entity\tarif $tarif)
+    public function setTarif(\GarderieBundle\Entity\tarif $tarif)
     {
         $this->tarif = $tarif;
 
@@ -179,10 +180,16 @@ class responsableLegal
     /**
      * Get tarif
      *
-     * @return \OC\GarderieBundle\Entity\tarif
+     * @return \GarderieBundle\Entity\tarif
      */
     public function getTarif()
     {
         return $this->tarif;
     }
+
+        public function __toString()
+    {
+        return $this->prenom.' '.$this->nom;
+    }
+
 }

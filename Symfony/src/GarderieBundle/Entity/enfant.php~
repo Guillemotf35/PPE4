@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class enfant
 {
-        /**
-    * @ORM\ManyToOne(targetEntity="OC\GarderieBundle\Entity\responsableLegal")
+    /**
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\responsableLegal",cascade={"persist"})
     * @ORM\JoinColumn(nullable=false)
     */
     private $responsableLegal;
@@ -42,9 +42,9 @@ class enfant
     private $prenom;
 
     /**
-     * @var string
+     * @var date
      *
-     * @ORM\Column(name="dateNaissance", type="string", length=255)
+     * @ORM\Column(name="dateNaissance", type="date")
      */
     private $dateNaissance;
 
@@ -107,10 +107,46 @@ class enfant
         return $this->prenom;
     }
 
+
+
+
+      public function __toString()
+    {
+        return $this->nom.' '.$this->prenom;
+
+       
+    }
+
+    /**
+     * Set responsableLegal
+     *
+     * @param \GarderieBundle\Entity\responsableLegal $responsableLegal
+     *
+     * @return enfant
+     */
+    public function setResponsableLegal(\GarderieBundle\Entity\responsableLegal $responsableLegal)
+    {
+        $this->responsableLegal = $responsableLegal;
+
+        return $this;
+    }
+
+    /**
+     * Get responsableLegal
+     *
+     * @return \GarderieBundle\Entity\responsableLegal
+     */
+    public function getResponsableLegal()
+    {
+        return $this->responsableLegal;
+    }
+
+  
+
     /**
      * Set dateNaissance
      *
-     * @param string $dateNaissance
+     * @param \date $dateNaissance
      *
      * @return enfant
      */
@@ -124,11 +160,10 @@ class enfant
     /**
      * Get dateNaissance
      *
-     * @return string
+     * @return \date
      */
     public function getDateNaissance()
     {
         return $this->dateNaissance;
     }
 }
-

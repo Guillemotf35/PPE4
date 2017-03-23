@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class responsableLegal
 {
     /**
-    * @ORM\ManyToOne(targetEntity="OC\GarderieBundle\Entity\tarif")
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\tarif")
     * @ORM\JoinColumn(nullable=false)
     */
     private $tarif;
@@ -161,5 +161,35 @@ class responsableLegal
     {
         return $this->qF;
     }
-}
 
+
+    /**
+     * Set tarif
+     *
+     * @param \GarderieBundle\Entity\tarif $tarif
+     *
+     * @return responsableLegal
+     */
+    public function setTarif(\GarderieBundle\Entity\tarif $tarif)
+    {
+        $this->tarif = $tarif;
+
+        return $this;
+    }
+
+    /**
+     * Get tarif
+     *
+     * @return \GarderieBundle\Entity\tarif
+     */
+    public function getTarif()
+    {
+        return $this->tarif;
+    }
+
+        public function __toString()
+    {
+        return $this->prenom.' '.$this->nom;
+    }
+
+}

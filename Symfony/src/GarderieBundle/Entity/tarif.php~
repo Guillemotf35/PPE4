@@ -62,5 +62,10 @@ class tarif
     {
         return $this->prixQuartHeure;
     }
-}
 
+
+      public function __toString()
+    {
+        return $this->prixQuartHeure;     
+    }
+}
