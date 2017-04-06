@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Presence
 {
 
-    /**
+     /**
     * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\enfant")
     * @ORM\JoinColumn(nullable=false)
     */
@@ -24,7 +24,7 @@ class Presence
     * @ORM\JoinColumn(nullable=false)
     */
     private $jour;
-
+    
     /**
      * @var int
      *
@@ -35,21 +35,21 @@ class Presence
     private $id;
 
     /**
-     * @var Time
+     * @var \DateTime
      *
      * @ORM\Column(name="heureArriveeMatin", type="time")
      */
     private $heureArriveeMatin;
 
     /**
-     * @var Time
+     * @var \DateTime
      *
      * @ORM\Column(name="heureDepartSoir", type="time")
      */
     private $heureDepartSoir;
 
     /**
-     * @var date
+     * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
      */
@@ -65,92 +65,6 @@ class Presence
     {
         return $this->id;
     }
-
-  
-  
-    /**
-     * Set date
-     *
-     * @param date $date
-     *
-     * @return Presence
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return date
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-
-  
-
-    /**
-     * Set enfant
-     *
-     * @param \GarderieBundle\Entity\enfant $enfant
-     *
-     * @return Presence
-     */
-    public function setEnfant(\GarderieBundle\Entity\enfant $enfant)
-    {
-        $this->enfant = $enfant;
-
-        return $this;
-    }
-
-    /**
-     * Get enfant
-     *
-     * @return \GarderieBundle\Entity\enfant
-     */
-    public function getEnfant()
-    {
-        return $this->enfant;
-    }
-
-    /**
-     * Set jour
-     *
-     * @param \GarderieBundle\Entity\jour $jour
-     *
-     * @return Presence
-     */
-    public function setJour(\GarderieBundle\Entity\jour $jour)
-    {
-        $this->jour = $jour;
-
-        return $this;
-    }
-
-    /**
-     * Get jour
-     *
-     * @return \GarderieBundle\Entity\jour
-     */
-    public function getJour()
-    {
-        return $this->jour;
-    }
-
-    /**
-     * Set heureArriveeMatin
-     *
-     * @param time $heureArriveeMatin
-     *
-     * @return Presence
-     */
-
 
     /**
      * Set heureArriveeMatin
@@ -198,5 +112,77 @@ class Presence
     public function getHeureDepartSoir()
     {
         return $this->heureDepartSoir;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Presence
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set enfant
+     *
+     * @param \GarderieBundle\Entity\enfant $enfant
+     *
+     * @return Presence
+     */
+    public function setEnfant(\GarderieBundle\Entity\enfant $enfant)
+    {
+        $this->enfant = $enfant;
+
+        return $this;
+    }
+
+    /**
+     * Get enfant
+     *
+     * @return \GarderieBundle\Entity\enfant
+     */
+    public function getEnfant()
+    {
+        return $this->enfant;
+    }
+
+    /**
+     * Set jour
+     *
+     * @param \GarderieBundle\Entity\jour $jour
+     *
+     * @return Presence
+     */
+    public function setJour(\GarderieBundle\Entity\jour $jour)
+    {
+        $this->jour = $jour;
+
+        return $this;
+    }
+
+    /**
+     * Get jour
+     *
+     * @return \GarderieBundle\Entity\jour
+     */
+    public function getJour()
+    {
+        return $this->jour;
     }
 }

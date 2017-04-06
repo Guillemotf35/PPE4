@@ -79,7 +79,7 @@ easy_admin:
             - { name : 'edit', label: 'Modifier', icon : 'pencil'}
             - { name : 'new', label: 'Nouveau', icon : 'plus-square'}
             - { name : 'search', label: 'Rechercher'}
-            - { name : 'delete', label: 'Supprimer'}
+            - { name : 'delete', label: 'Supprimer' , icon : 'remove'}
             
 
 

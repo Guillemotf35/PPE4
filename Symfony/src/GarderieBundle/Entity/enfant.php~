@@ -42,7 +42,7 @@ class enfant
     private $prenom;
 
     /**
-     * @var date
+     * @var \DateTime
      *
      * @ORM\Column(name="dateNaissance", type="date")
      */
@@ -107,46 +107,10 @@ class enfant
         return $this->prenom;
     }
 
-
-
-
-      public function __toString()
-    {
-        return $this->nom.' '.$this->prenom;
-
-       
-    }
-
-    /**
-     * Set responsableLegal
-     *
-     * @param \GarderieBundle\Entity\responsableLegal $responsableLegal
-     *
-     * @return enfant
-     */
-    public function setResponsableLegal(\GarderieBundle\Entity\responsableLegal $responsableLegal)
-    {
-        $this->responsableLegal = $responsableLegal;
-
-        return $this;
-    }
-
-    /**
-     * Get responsableLegal
-     *
-     * @return \GarderieBundle\Entity\responsableLegal
-     */
-    public function getResponsableLegal()
-    {
-        return $this->responsableLegal;
-    }
-
-  
-
     /**
      * Set dateNaissance
      *
-     * @param \date $dateNaissance
+     * @param \DateTime $dateNaissance
      *
      * @return enfant
      */
@@ -160,7 +124,7 @@ class enfant
     /**
      * Get dateNaissance
      *
-     * @return \date
+     * @return \DateTime
      */
     public function getDateNaissance()
     {
