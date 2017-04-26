@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class enfant
 {
-        /**
-    * @ORM\ManyToOne(targetEntity="OC\GarderieBundle\Entity\responsableLegal")
+    /**
+    * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\responsableLegal",cascade={"persist"})
     * @ORM\JoinColumn(nullable=false)
     */
     private $responsableLegal;
@@ -42,9 +42,9 @@ class enfant
     private $prenom;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="dateNaissance", type="string", length=255)
+     * @ORM\Column(name="dateNaissance", type="date")
      */
     private $dateNaissance;
 
@@ -110,7 +110,7 @@ class enfant
     /**
      * Set dateNaissance
      *
-     * @param string $dateNaissance
+     * @param \DateTime $dateNaissance
      *
      * @return enfant
      */
@@ -124,11 +124,10 @@ class enfant
     /**
      * Get dateNaissance
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateNaissance()
     {
         return $this->dateNaissance;
     }
 }
-

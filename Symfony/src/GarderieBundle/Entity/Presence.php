@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Presence
 {
 
-    /**
+     /**
     * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\enfant")
     * @ORM\JoinColumn(nullable=false)
     */
@@ -24,7 +24,7 @@ class Presence
     * @ORM\JoinColumn(nullable=false)
     */
     private $jour;
-
+    
     /**
      * @var int
      *
@@ -35,16 +35,16 @@ class Presence
     private $id;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="heureArriveeMatin", type="string", length=255)
+     * @ORM\Column(name="heureArriveeMatin", type="time")
      */
     private $heureArriveeMatin;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="heureDepartSoir", type="string", length=255)
+     * @ORM\Column(name="heureDepartSoir", type="time")
      */
     private $heureDepartSoir;
 
@@ -69,7 +69,7 @@ class Presence
     /**
      * Set heureArriveeMatin
      *
-     * @param string $heureArriveeMatin
+     * @param \DateTime $heureArriveeMatin
      *
      * @return Presence
      */
@@ -83,7 +83,7 @@ class Presence
     /**
      * Get heureArriveeMatin
      *
-     * @return string
+     * @return \DateTime
      */
     public function getHeureArriveeMatin()
     {
@@ -93,7 +93,7 @@ class Presence
     /**
      * Set heureDepartSoir
      *
-     * @param string $heureDepartSoir
+     * @param \DateTime $heureDepartSoir
      *
      * @return Presence
      */
@@ -107,7 +107,7 @@ class Presence
     /**
      * Get heureDepartSoir
      *
-     * @return string
+     * @return \DateTime
      */
     public function getHeureDepartSoir()
     {
@@ -141,11 +141,11 @@ class Presence
     /**
      * Set enfant
      *
-     * @param \OC\PlatformBundle\Entity\enfant $enfant
+     * @param \GarderieBundle\Entity\enfant $enfant
      *
      * @return Presence
      */
-    public function setEnfant(\OC\PlatformBundle\Entity\enfant $enfant)
+    public function setEnfant(\GarderieBundle\Entity\enfant $enfant)
     {
         $this->enfant = $enfant;
 
@@ -155,7 +155,7 @@ class Presence
     /**
      * Get enfant
      *
-     * @return \OC\PlatformBundle\Entity\enfant
+     * @return \GarderieBundle\Entity\enfant
      */
     public function getEnfant()
     {
@@ -165,11 +165,11 @@ class Presence
     /**
      * Set jour
      *
-     * @param \OC\PlatformBundle\Entity\jour $jour
+     * @param \GarderieBundle\Entity\jour $jour
      *
      * @return Presence
      */
-    public function setJour(\OC\PlatformBundle\Entity\jour $jour)
+    public function setJour(\GarderieBundle\Entity\jour $jour)
     {
         $this->jour = $jour;
 
@@ -179,7 +179,7 @@ class Presence
     /**
      * Get jour
      *
-     * @return \OC\PlatformBundle\Entity\jour
+     * @return \GarderieBundle\Entity\jour
      */
     public function getJour()
     {

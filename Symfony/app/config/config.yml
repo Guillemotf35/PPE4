@@ -69,3 +69,76 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# app/config/config.yml
+easy_admin:
+    site_name: 'ADMIN'
+    
+    list:           
+        actions:
+            - { name : 'edit', label: 'Modifier', icon : 'pencil'}
+            - { name : 'new', label: 'Nouveau', icon : 'plus-square'}
+            - { name : 'search', label: 'Rechercher'}
+            - { name : 'delete', label: 'Supprimer' , icon : 'remove'}
+            
+
+
+
+    design:
+        brand_color: '#455a64'
+        menu:
+            - { entity : 'Presence', label: 'Présence'}
+            - { entity : 'enfant', label: 'Enfant'}
+            - { entity : 'responsableLegal', label: 'Responsable Légal'}
+            - { entity : 'jour', label: 'Jour'}
+            - { entity : 'tarif', label: 'Tarifs'}
+
+    formats:
+        date : 'd/m/Y'
+        time : 'H:i'
+           
+        
+    entities:
+
+            Presence:
+                label: Présence
+                class: GarderieBundle\Entity\Presence
+                list:
+                    title: "Présence"
+
+            
+            enfant:
+                label: Enfant
+                class: GarderieBundle\Entity\enfant
+                list:
+                    title: "Enfant"
+
+            responsableLegal:
+                label: Responsable Légal
+                class: GarderieBundle\Entity\responsableLegal
+                list:
+                    title: "Responsable Légal"
+                   
+            jour:
+                label: Jour
+                class: GarderieBundle\Entity\jour
+                list:
+                    title: "Jour"
+    
+
+            tarif:
+                label: Tarifs
+                class: GarderieBundle\Entity\tarif
+                list:
+                    title: "Tarifs"
+
+
+         
+
+           
+                
+          
+
+
+
+        
