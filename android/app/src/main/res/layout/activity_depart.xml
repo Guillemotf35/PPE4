@@ -21,13 +21,16 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
+
     <Button
         android:text="@string/btndepart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnDepart"
         android:layout_below="@+id/libelleTitle"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="gotoDepartActivity"
+        />
 
     <Button
         android:text="@string/btnRecap"
@@ -36,7 +39,22 @@
         android:id="@+id/btnRecap"
         android:layout_marginEnd="18dp"
         android:layout_below="@+id/libelleTitle"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="gotoRecapActivity"
+        />
+
+    <Button
+        android:text="@string/btnArrive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnArrive"
+        android:autoText="true"
+        android:layout_below="@+id/libelleTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="17dp"
+        android:onClick="gotoArriveActivity"
+        />
+
 
     <TimePicker
         android:layout_width="wrap_content"
@@ -58,16 +76,6 @@
         android:layout_alignParentStart="true"
         android:layout_above="@+id/timePicker"
         android:layout_toStartOf="@+id/spinnerEleve" />
-
-    <Button
-        android:text="@string/btnArrive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnArrive"
-        android:autoText="true"
-        android:layout_below="@+id/libelleTitle"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="17dp" />
 
     <Spinner
         android:layout_width="match_parent"

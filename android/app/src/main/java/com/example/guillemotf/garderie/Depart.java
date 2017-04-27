@@ -15,4 +15,6 @@ public class Depart extends AppCompatActivity{
         setContentView(R.layout.activity_depart);
     }
 
+
+
 }

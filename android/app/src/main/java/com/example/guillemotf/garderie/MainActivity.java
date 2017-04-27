@@ -1,10 +1,12 @@
 package com.example.guillemotf.garderie;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,6 +16,10 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+
+import static com.example.guillemotf.garderie.R.layout.activity_arrivee;
+import static com.example.guillemotf.garderie.R.layout.activity_depart;
+import static com.example.guillemotf.garderie.R.layout.activity_recap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,13 +36,16 @@ public class MainActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+    private Intent activity_recap;
+    private Intent activity_depart;
+    private Intent activity_arrivee;
 
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
 
         btnDepart = (Button) findViewById(R.id.btnDepart);
         btnArrive = (Button) findViewById(R.id.btnArrive);
@@ -48,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+        setContentView(R.layout.activity_main);
     }
 
     /**
@@ -86,18 +97,18 @@ public class MainActivity extends AppCompatActivity {
         client.disconnect();
     }
 
-    public void gotoArrive(View arriveView){
-        Intent arrivePage = new Intent(MainActivity.this , Arrive.class);
-        startActivity (arrivePage);
+    public void gotoDepartActivity(View view){
+        Intent intent = new Intent(this, Depart.class);
+        startActivity(intent);
     }
 
-    public void gotoDepart(View departView){
-        Intent departPage = new Intent(MainActivity.this , Depart.class);
-        startActivity (departPage);
-    }
-    public void gotoRecap(View recapView){
-        Intent recapPage = new Intent(MainActivity.this , Recap.class);
-        startActivity (recapPage);
+    public void gotoArriveActivity(View view){
+        Intent intent = new Intent(this, Arrive.class);
+        startActivity(intent);
     }
 
+    public void gotoRecapActivity(View view){
+        Intent intent = new Intent(this, Recap.class);
+        startActivity(intent);
+    }
 }
